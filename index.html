@@ -5,14 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>Ловец посылок</title>
 <style>
+  @font-face {
+    font-family: 'Rooftop';
+    src: url('./TRIAL_Rooftop-Bold-BF64a6319fb7a91.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
   * { margin: 0; padding: 0; box-sizing: border-box; user-select: none; -webkit-tap-highlight-color: transparent; }
-  html, body { height: 100%; overflow: hidden; font-family: 'Segoe UI', system-ui, sans-serif; background: #1a1a2e; }
+  html, body {
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Rooftop', 'Segoe UI', system-ui, sans-serif;
+    background: #1a1a2e;
+  }
   #game { display: block; width: 100vw; height: 100vh; touch-action: none; }
 
   .overlay {
     position: fixed; inset: 0; display: flex; flex-direction: column;
     align-items: center; justify-content: center; text-align: center;
     color: #fff; padding: 20px; z-index: 10;
+    font-family: 'Rooftop', 'Segoe UI', system-ui, sans-serif;
   }
   .overlay.hidden { display: none; }
 
@@ -37,15 +51,17 @@
     align-items: center;
     gap: 14px;
     overflow-y: auto;
+    font-family: 'Rooftop', 'Segoe UI', system-ui, sans-serif;
   }
 
   .rules-panel h1 {
     font-size: clamp(24px, 6vw, 34px);
     color: #222;
-    font-weight: 800;
+    font-weight: normal;
     letter-spacing: 1px;
     margin: 0;
     text-shadow: none;
+    font-family: 'Rooftop', 'Segoe UI', system-ui, sans-serif;
   }
 
   .rules-panel p {
@@ -54,13 +70,14 @@
     line-height: 1.5;
     margin: 0;
     max-width: 480px;
+    font-family: 'Rooftop', 'Segoe UI', system-ui, sans-serif;
   }
 
   /* ==== Кнопки ==== */
   .btn {
     padding: 16px 48px;
     font-size: clamp(16px, 4vw, 20px);
-    font-weight: 800;
+    font-weight: normal;
     background: #ff0000;
     color: #ffffff;
     border: none;
@@ -70,6 +87,7 @@
     box-shadow: 0 6px 0 #b30000, 0 8px 18px rgba(0, 0, 0, 0.25);
     transition: transform 0.1s, box-shadow 0.1s;
     margin-top: 6px;
+    font-family: 'Rooftop', 'Segoe UI', system-ui, sans-serif;
   }
   .btn:active {
     transform: translateY(4px);
@@ -79,6 +97,7 @@
   /* ==== Экран Game Over ==== */
   #gameOverScreen {
     background: rgba(15, 15, 30, 0.92);
+    font-family: 'Rooftop', 'Segoe UI', system-ui, sans-serif;
   }
   #gameOverScreen h1 {
     font-size: clamp(28px, 7vw, 52px);
@@ -86,20 +105,45 @@
     color: #ff6b6b;
     text-shadow: 0 3px 0 #7a1f1f;
     letter-spacing: 1px;
+    font-weight: normal;
+    font-family: 'Rooftop', 'Segoe UI', system-ui, sans-serif;
   }
   .stats { display: flex; gap: 40px; margin: 20px 0 30px; }
   .stat { display: flex; flex-direction: column; align-items: center; }
-  .stat-val { font-size: clamp(32px, 8vw, 56px); font-weight: 800; color: #ffd93d; line-height: 1; }
-  .stat-label { font-size: clamp(12px, 3vw, 16px); color: #a0a0c0; margin-top: 6px; text-transform: uppercase; letter-spacing: 2px; }
+  .stat-val {
+    font-size: clamp(32px, 8vw, 56px);
+    font-weight: normal;
+    color: #ffd93d;
+    line-height: 1;
+    font-family: 'Rooftop', 'Segoe UI', system-ui, sans-serif;
+  }
+  .stat-label {
+    font-size: clamp(12px, 3vw, 16px);
+    color: #a0a0c0;
+    margin-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Rooftop', 'Segoe UI', system-ui, sans-serif;
+  }
 
   /* ==== Игровой HUD ==== */
   #gameUI {
     position: fixed; top: 0; left: 0; right: 0; padding: 16px 20px;
     display: flex; justify-content: space-between; pointer-events: none; z-index: 5;
-    font-weight: 800; text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    font-weight: normal; text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    font-family: 'Rooftop', 'Segoe UI', system-ui, sans-serif;
   }
-  .ui-score { font-size: clamp(20px, 5vw, 32px); color: #ffd93d; }
-  .ui-lives { font-size: clamp(20px, 5vw, 32px); color: #ff6b6b; letter-spacing: 4px; }
+  .ui-score {
+    font-size: clamp(20px, 5vw, 32px);
+    color: #ffd93d;
+    font-family: 'Rooftop', 'Segoe UI', system-ui, sans-serif;
+  }
+  .ui-lives {
+    font-size: clamp(20px, 5vw, 32px);
+    color: #ff6b6b;
+    letter-spacing: 4px;
+    font-family: 'Rooftop', 'Segoe UI', system-ui, sans-serif;
+  }
 </style>
 </head>
 <body>
